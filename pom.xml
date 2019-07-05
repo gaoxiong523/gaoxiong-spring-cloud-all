@@ -8,6 +8,7 @@
         <module>message-service</module>
         <module>gaoxiong-user</module>
         <module>gaoxiong-zuul</module>
+        <module>gaoxiong-auth2</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
