@@ -1,0 +1,18 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: message-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka
+    instance-info-replication-interval-seconds: 5 #客户端信息上报到服务的周期
+    registry-fetch-interval-seconds: 5 #客户端拉取服务器配置信息的周期，默认30s
+    healthcheck:
+      enabled: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    lease-renewal-interval-in-seconds: 15 #每隔15秒向服务端发送一次心跳,证明自己依然存活
+    lease-expiration-duration-in-seconds: 30 #告诉服务器,如果我30秒之内没有给你发送心跳,就把我移除
