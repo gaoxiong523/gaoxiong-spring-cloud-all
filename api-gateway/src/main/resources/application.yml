@@ -1,0 +1,15 @@
+server:
+  port: 8080
+zuul:
+  routes:
+    auth-server: /uaa/**
+    order-service: /order/**
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8080/uaa/user
+      prefer-token-info: false
+    client:
+      client-id: webapp
+      access-token-uri: http://localhost:8080/uaa/oauth/token
+      user-authorization-uri: http://locaohost:8080/uaa/oauth/authorize
