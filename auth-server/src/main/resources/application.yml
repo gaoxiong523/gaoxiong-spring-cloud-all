@@ -1,0 +1,23 @@
+server:
+  port: 6002
+spring:
+  application:
+    name: auth-server
+  jpa:
+    database: POSTGRESQL
+    open-in-view: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://106.12.84.126:5432/auth
+    username: wang
+    password: yunfei
+    driver-class-name: org.postgresql.Driver
+  redis:
+    host: 106.12.84.126
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6001/eureka
