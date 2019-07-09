@@ -3,6 +3,7 @@ package com.gaoxiong.authserver.config;
 import com.gaoxiong.authserver.service.DomainUserDetailService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -18,6 +19,7 @@ import org.springframework.security.data.repository.query.SecurityEvaluationCont
  * @date 2019/7/8 10:22
  */
 @Configuration
+@Order(10)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean

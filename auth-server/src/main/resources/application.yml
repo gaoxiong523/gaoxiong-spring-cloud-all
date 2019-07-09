@@ -21,3 +21,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:6001/eureka
+security:
+  oauth2:
+    resource:
+      filter-order: 3
